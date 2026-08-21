@@ -1,14 +1,8 @@
--- =====================================================
 -- HOTEL MANAGEMENT SYSTEM
 -- Sample Data
--- PostgreSQL
--- =====================================================
 
 
--- =====================================================
 -- 1. CUSTOMER DATA
--- =====================================================
-
 INSERT INTO customer
 (customer_id, customer_name, email, phone, address, id_proof, registration_date)
 VALUES
@@ -24,10 +18,7 @@ VALUES
 (10, 'KIRAN', 'kiran333@gmail.com', '9444444444', 'Secunderabad', 'AADHAR', '2026-01-10');
 
 
--- =====================================================
 -- 2. ROOM DATA
--- =====================================================
-
 INSERT INTO room
 (room_id, room_number, room_type, price_per_night, status, capacity)
 VALUES
@@ -43,10 +34,7 @@ VALUES
 (10, '502', 'Deluxe', 5200.00, 'AVAILABLE', 3);
 
 
--- =====================================================
 -- 3. EMPLOYEE DATA
--- =====================================================
-
 INSERT INTO employee
 (employee_id, employee_name, employee_role, phone, salary, shift)
 VALUES
@@ -62,10 +50,7 @@ VALUES
 (10, 'KIRAN', 'Manager', '9000000010', 48000.00, 'DAY');
 
 
--- =====================================================
 -- 4. BOOKING DATA
--- =====================================================
-
 INSERT INTO booking
 (booking_id, customer_id, room_id, employee_id,
  check_in_date, check_out_date, booking_date,
@@ -102,10 +87,7 @@ VALUES
  'CONFIRMED', 1500.00 * 2);
 
 
--- =====================================================
 -- 5. SERVICE DATA
--- =====================================================
-
 INSERT INTO service
 (service_id, service_name, price, description)
 VALUES
@@ -121,10 +103,7 @@ VALUES
 (10, 'Room Cleaning', 300, 'Daily cleaning');
 
 
--- =====================================================
 -- 6. BOOKING SERVICE DATA
--- =====================================================
-
 INSERT INTO booking_service
 (booking_service_id, booking_id, service_id,
  quantity, service_date, total_cost)
@@ -141,10 +120,7 @@ VALUES
 (10, 10, 10, 1, '2026-03-15', 300 * 1);
 
 
--- =====================================================
 -- 7. PAYMENT DATA
--- =====================================================
-
 INSERT INTO payment
 (payment_id, booking_id, payment_date,
  amount, payment_method, payment_status)
@@ -161,10 +137,7 @@ VALUES
 (10, 10, '2026-03-13', 3000.00, 'CARD', 'PAID');
 
 
--- =====================================================
 -- 8. FEEDBACK DATA
--- =====================================================
-
 INSERT INTO feedback
 (feedback_id, booking_id, customer_id,
  rating, feedback_date, comments)

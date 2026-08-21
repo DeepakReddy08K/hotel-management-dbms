@@ -1,13 +1,7 @@
--- =====================================================
 -- HOTEL MANAGEMENT SYSTEM
--- PostgreSQL Triggers
--- =====================================================
 
 
--- =====================================================
 -- 1. CHANGE ROOM STATUS AFTER BOOKING INSERT
--- =====================================================
-
 CREATE OR REPLACE FUNCTION change_room_status_on_insert()
 RETURNS TRIGGER
 LANGUAGE plpgsql
@@ -28,10 +22,7 @@ FOR EACH ROW
 EXECUTE FUNCTION change_room_status_on_insert();
 
 
--- =====================================================
 -- 2. CHANGE ROOM STATUS AFTER BOOKING DELETE
--- =====================================================
-
 CREATE OR REPLACE FUNCTION change_room_status_on_delete()
 RETURNS TRIGGER
 LANGUAGE plpgsql
@@ -52,10 +43,7 @@ FOR EACH ROW
 EXECUTE FUNCTION change_room_status_on_delete();
 
 
--- =====================================================
 -- 3. CHANGE ROOM STATUS AFTER BOOKING UPDATE
--- =====================================================
-
 CREATE OR REPLACE FUNCTION change_room_status_on_update()
 RETURNS TRIGGER
 LANGUAGE plpgsql

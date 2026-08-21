@@ -1,19 +1,8 @@
--- =====================================================
 -- Hotel Management System
 -- PostgreSQL Schema
--- =====================================================
 
--- Create Database
--- Run this separately if the database does not exist.
--- CREATE DATABASE hotel_management;
 
--- Connect to the database before executing this file.
--- \c hotel_management
-
--- =====================================================
 -- CUSTOMER TABLE
--- =====================================================
-
 CREATE TABLE CUSTOMER (
     CUSTOMER_ID INT PRIMARY KEY,
     CUSTOMER_NAME VARCHAR(40) NOT NULL,
@@ -24,10 +13,7 @@ CREATE TABLE CUSTOMER (
     REGISTRATION_DATE DATE
 );
 
--- =====================================================
 -- ROOM TABLE
--- =====================================================
-
 CREATE TABLE ROOM (
     ROOM_ID INT PRIMARY KEY,
     ROOM_NUMBER VARCHAR(5) UNIQUE,
@@ -37,10 +23,8 @@ CREATE TABLE ROOM (
     CAPACITY INT NOT NULL
 );
 
--- =====================================================
--- EMPLOYEE TABLE
--- =====================================================
 
+-- EMPLOYEE TABLE
 CREATE TABLE EMPLOYEE (
     EMPLOYEE_ID INT PRIMARY KEY,
     EMPLOYEE_NAME VARCHAR(40) NOT NULL,
@@ -50,10 +34,8 @@ CREATE TABLE EMPLOYEE (
     SHIFT VARCHAR(20)
 );
 
--- =====================================================
--- BOOKING TABLE
--- =====================================================
 
+-- BOOKING TABLE
 CREATE TABLE BOOKING (
     BOOKING_ID INT PRIMARY KEY,
     CUSTOMER_ID INT NOT NULL,
@@ -78,10 +60,7 @@ CREATE TABLE BOOKING (
         REFERENCES EMPLOYEE(EMPLOYEE_ID)
 );
 
--- =====================================================
 -- SERVICE TABLE
--- =====================================================
-
 CREATE TABLE SERVICE (
     SERVICE_ID INT PRIMARY KEY,
     SERVICE_NAME VARCHAR(40) NOT NULL,
@@ -89,10 +68,7 @@ CREATE TABLE SERVICE (
     DESCRIPTION VARCHAR(255)
 );
 
--- =====================================================
 -- BOOKING_SERVICE TABLE
--- =====================================================
-
 CREATE TABLE BOOKING_SERVICE (
     BOOKING_SERVICE_ID INT PRIMARY KEY,
     BOOKING_ID INT NOT NULL,
@@ -110,10 +86,8 @@ CREATE TABLE BOOKING_SERVICE (
         REFERENCES SERVICE(SERVICE_ID)
 );
 
--- =====================================================
--- PAYMENT TABLE
--- =====================================================
 
+-- PAYMENT TABLE
 CREATE TABLE PAYMENT (
     PAYMENT_ID INT PRIMARY KEY,
     BOOKING_ID INT NOT NULL,
@@ -126,10 +100,8 @@ CREATE TABLE PAYMENT (
         FOREIGN KEY (BOOKING_ID)
         REFERENCES BOOKING(BOOKING_ID)
 );
--- =====================================================
--- FEEDBACK TABLE
--- =====================================================
 
+-- FEEDBACK TABLE
 CREATE TABLE FEEDBACK (
     FEEDBACK_ID INT PRIMARY KEY,
     BOOKING_ID INT NOT NULL,
